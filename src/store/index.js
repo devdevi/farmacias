@@ -23,7 +23,6 @@ export default new Vuex.Store({
     GET_COMUNAS: ({ commit }) => comunaService.getData()
       .then((res) => {
         const name = 'comunas';
-        console.log(res);
         const value = res.data;
         commit('SET_DATA', { name, value });
       }),

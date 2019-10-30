@@ -156,7 +156,7 @@ export default {
   }),
   computed: {
     ...mapState([
-      'comunas',
+      // 'comunas',
       'farmacias',
     ]),
     filteredDataObj() {
@@ -179,7 +179,7 @@ export default {
     },
   },
   mounted() {
-    this.GET_COMUNAS();
+    // this.GET_COMUNAS();
     this.GET_FARMACIAS();
     this.set_lista_farmacias();
     this.set_lista_comunas();
