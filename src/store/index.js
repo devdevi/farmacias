@@ -19,7 +19,7 @@ export default new Vuex.Store({
   },
   actions: {
     GET_COMUNAS: ({ commit }) => comunaService.getComunas()
-      .then((res) => {
+      .then(() => {
         const name = 'comunas';
         const forceData = {
           1: 'REGION DE ARICA Y PARINACOTA',
@@ -39,7 +39,7 @@ export default new Vuex.Store({
           15: 'REGION DE MAGALLANES Y LA ANTARTICA CHILENA',
           16: 'REGION DE ÑUBLE',
         };
-        const value = res;
+        const value = forceData;
         commit('SET_DATA', { name, value });
       }),
     GET_FARMACIAS: ({ commit }) => farmaciaService.getData()
