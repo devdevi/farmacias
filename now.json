@@ -15,5 +15,5 @@
       { "handle": "filesystem" },
       { "src": ".*", "dest": "/" }
     ],
-    "alias": "farmacias_de _turno.com"
+    "alias": "farmacias.com"
   }
