@@ -148,8 +148,6 @@ export default {
     openOnFocus: false,
     name: '',
     farmacia: '',
-    lista_comunas: [],
-    lista_farmacias: [],
     comuna_seleccionada: null,
     farmacia_seleccionada: null,
     msg: 'Encuentra farmacias de la región metropolitana.',
@@ -177,24 +175,22 @@ export default {
         .indexOf(this.name.toLowerCase()) >= 0 && item.local_nombre.toLowerCase()
         .indexOf(this.farmacia.toLowerCase()) >= 0);
     },
+    lista_comunas() {
+      return [...new Set(this.farmacias.map(option => option.comuna_nombre))];
+    },
+    lista_farmacias() {
+      return [...new Set(this.farmacias.map(option => option.local_nombre))];
+    },
   },
   mounted() {
     // this.GET_COMUNAS();
     this.GET_FARMACIAS();
-    this.set_lista_farmacias();
-    this.set_lista_comunas();
   },
   methods: {
     ...mapActions([
       'GET_COMUNAS',
       'GET_FARMACIAS',
     ]),
-    set_lista_comunas() {
-      this.lista_comunas = [...new Set(this.farmacias.map(option => option.comuna_nombre))];
-    },
-    set_lista_farmacias() {
-      this.lista_farmacias = [...new Set(this.farmacias.map(option => option.local_nombre))];
-    },
     onClickClean() {
       this.name = '';
       this.farmacia = '';
