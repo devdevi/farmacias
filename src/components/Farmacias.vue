@@ -153,7 +153,7 @@ export default {
     lista_farmacias: [],
     comuna_seleccionada: null,
     farmacia_seleccionada: null,
-    msg: 'Encuentran farmacias de la región metropolitana.',
+    msg: 'Encuentra farmacias de la región metropolitana.',
   }),
   computed: {
     ...mapState([
