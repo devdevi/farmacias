@@ -1,11 +1,11 @@
-import service from './service';
+import service from './farmaciaService';
 
-const farmaciaService = {};
+const farmaciaServices = {};
 
-farmaciaService.getData = () => (
+farmaciaServices.getData = () => (
   service.get('getLocalesRegion/?id_region=7')
     .then(res => res)
     .catch(err => err.response.data)
 );
 
-export default farmaciaService;
+export default farmaciaServices;

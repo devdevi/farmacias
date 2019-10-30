@@ -148,7 +148,6 @@ export default {
     openOnFocus: false,
     name: '',
     farmacia: '',
-    comunas: [],
     lista_comunas: [],
     lista_farmacias: [],
     comuna_seleccionada: null,
@@ -157,7 +156,7 @@ export default {
   }),
   computed: {
     ...mapState([
-      // 'comunas',
+      'comunas',
       'farmacias',
     ]),
     filteredDataObj() {
@@ -180,9 +179,8 @@ export default {
     },
   },
   mounted() {
-    // this.GET_COMUNAS();
-    // this.GET_FARMACIAS();
-    this.FAKE();
+    this.GET_COMUNAS();
+    this.GET_FARMACIAS();
     this.set_lista_farmacias();
     this.set_lista_comunas();
   },
@@ -190,8 +188,6 @@ export default {
     ...mapActions([
       'GET_COMUNAS',
       'GET_FARMACIAS',
-      'FAKE',
-      'FAKE_COMUNAS',
     ]),
     set_lista_comunas() {
       this.lista_comunas = [...new Set(this.farmacias.map(option => option.comuna_nombre))];
